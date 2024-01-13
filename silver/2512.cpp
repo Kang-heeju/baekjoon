@@ -4,7 +4,7 @@
 using namespace std;
 int region[15000];
 
-void bubleSort(int x) {
+void bubleSort(int x) { //굳이 이렇게 안하고 sort 함수 써도 됨
     for(int i = 0; i < x; i ++) {
         for (int j = 0 ; j < x - i - 1; j++) {
             if(region[j] > region[j + 1])
