@@ -19,19 +19,18 @@ void calBudget(double x, double budget) {
     int max = 0;
 
     for(int i = 0; i < x; i++){
-        if(region[i] <= avgBudget) {
-            if(region[i] > max)
+        if(region[i] <= avgBudget) { //요구하는 예산이 상한액보다 적을 때
+            if(region[i] > max) //최댓값 예산 업데이트
                 max = region[i];
             budget = budget - region[i];
         }
-        else {
+        else { //상한액보다 요구하는 예산이 많을 때
             max = avgBudget;
             budget = budget - avgBudget;
         }
         remainRegion--;
-        avgBudget = budget / remainRegion;
+        avgBudget = budget / remainRegion; //상한액 업데이트
     }
-
 
     cout << max;
 }
